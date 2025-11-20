@@ -1,75 +1,103 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>살사미 소스</title>
-    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-    <style>
-        /* 제목과 이미지 섹션 간의 간격 */
-        .hero {
-            margin-bottom: 30px;
-        }
-
-        /* 이미지 호버 효과 */
-        .card-img-top {
-            transition: transform 0.3s ease;
-        }
-
-        .card-img-top:hover {
-            transform: scale(1.1);
-        }
-    </style>
+<!DOCTYPE html>
+.cover { border: 1px solid #ccc; padding: 10px; cursor: pointer; text-align: center; }
+img { width: 100%; height: auto; }
+.episode-list div { margin: 8px 0; cursor: pointer; }
+.nav { display: flex; justify-content: space-between; margin-top: 20px; }
+</style>
 </head>
-
 <body>
-    <div class="hero d-flex align-items-center justify-content-center" style="background-color: #333333;">
-        <div class="container text-center">
-            <h1 class="display-4 text-light">살사미 소스</h1>
-            <p class="lead text-light">비스켓에게 치얼스</p>
-        </div>
-    </div>
+<!-- 1. 메인 페이지 -->
+<section id="main-page">
+<h1>메인 페이지</h1>
+<div class="grid">
+<div class="cover" onclick="showComic()">
+<img src="cover1.jpg" alt="만화1" />
+<p>만화 제목 1</p>
+</div>
+<div class="cover" onclick="showComic()">
+<img src="cover2.jpg" alt="만화2" />
+<p>만화 제목 2</p>
+</div>
+</div>
+</section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-d9_Fvs2bjwgEhHYYYusm707MxMQe6fCT5A&s" class="card-img-top" alt="Nature">
-                    <div class="card-body">
-                        <h5 class="card-title">지수함수와 로그함수</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">팩토리얼</h6>
-                        <p class="card-text">인수분해를 선사해줍니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCtyUhoEj8_xxNaMeJOl-NoqRdkqK3zix2MA&s" class="card-img-top" alt="City">
-                    <div class="card-body">
-                        <h5 class="card-title">장수돌침대</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">★★★★★</h6>
-                        <p class="card-text">마트에서 장사합니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3f4ec842-6f7a-4d31-ab32-a35b7c42e7d8/dgvd6bj-d8c21830-800a-4642-954f-249381540aae.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNmNGVjODQyLTZmN2EtNGQzMS1hYjMyLWEzNWI3YzQyZTdkOFwvZGd2ZDZiai1kOGMyMTgzMC04MDBhLTQ2NDItOTU0Zi0yNDkzODE1NDBhYWUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DXNYAFrTUPlJjEfgUpPXR_YY_znMJ4qNWyu2QEG442E" class="card-img-top" alt="Beach">
-                    <div class="card-body">
-                        <h5 class="card-title">브롤할라</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">난투</h6>
-                        <p class="card-text">망했습니다</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<!-- 2. 만화 메인 페이지 -->
+<section id="comic-page" style="display:none;">
+<button onclick="showMain()">← 돌아가기</button>
+<h2>만화 제목 1</h2>
+<img src="cover1.jpg" alt="커버" style="width:200px;" />
+<p>한줄 설명: ...</p>
+
+
+<h3>에피소드 목록</h3>
+<div class="episode-list">
+<div onclick="showEpisode(1)">1화</div>
+<div onclick="showEpisode(2)">2화</div>
+<div onclick="showEpisode(3)">3화</div>
+</div>
+</section>
+
+
+<!-- 3. 만화 사진 페이지 -->
+<section id="episode-page" style="display:none;">
+<button onclick="showComic()">← 만화 메인으로</button>
+<h2 id="ep-title">1화</h2>
+
+
+<div id="ep-images">
+<img src="ep1-1.jpg" />
+<img src="ep1-2.jpg" />
+<img src="ep1-3.jpg" />
+</div>
+
+
+<div class="nav">
+<button onclick="prevEp()">이전화</button>
+<button onclick="nextEp()">다음화</button>
+</div>
+</section>
+
+
+<script>
+let currentEp = 1;
+
+
+function showMain() {
+document.getElementById('main-page').style.display = 'block';
+document.getElementById('comic-page').style.display = 'none';
+document.getElementById('episode-page').style.display = 'none';
+}
+
+
+function showComic() {
+document.getElementById('main-page').style.display = 'none';
+document.getElementById('comic-page').style.display = 'block';
+document.getElementById('episode-page').style.display = 'none';
+}
+
+
+function showEpisode(n) {
+currentEp = n;
+document.getElementById('ep-title').innerText = `${n}화`;
+
+
+// 이미지 경로 자동 로드 (예시)
+const container = document.getElementById('ep-images');
+container.innerHTML = `
+<img src="ep${n}-1.jpg" />
+<img src="ep${n}-2.jpg" />
+<img src="ep${n}-3.jpg" />
+`;
+
+
+document.getElementById('comic-page').style.display = 'none';
+document.getElementById('episode-page').style.display = 'block';
+}
+
+
+function nextEp() { showEpisode(currentEp + 1); }
+function prevEp() { if (currentEp > 1) showEpisode(currentEp - 1); }
+</script>
 </body>
-
 </html>
