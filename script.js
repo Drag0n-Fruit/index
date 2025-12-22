@@ -427,11 +427,11 @@ function openModal(index) {
             <div>
                 <div class="detail-section">
                     <h3>배경 및 컨셉</h3>
-                    <p>• ${c.concept}</p>
+                    <p><strong>• ${c.concept}</strong></p>
                     <p style="margin-top:10px; color:#ccc;" class="small-info">${c.story}</p>
                 </div>
                 <div class="detail-section skill-list">
-                    <h3>패시브 및 스킬</h3>
+                    <h3><br>패시브 및 스킬</h3>
                     <p>${c.passive}</p>
                     <p style="color:#ccc; margin-left: 6px;" class="small-info">${c.passivea}</p>
                     <hr style="border: none; border-top: 1px solid #444444; margin: 12px 0;">
