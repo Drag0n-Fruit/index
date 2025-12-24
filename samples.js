@@ -1,5 +1,6 @@
 const characters = [
     {   name: "하루견과",
+        code: 16,
         hanzul: "이거 올해안에 채택 안되면 님 미래 딸 자연선택에서 거부당함",
         role: "🔥 저격형",
         hp: 30,
@@ -23,6 +24,7 @@ const characters = [
         day: "2025/12/20"
     },
     {   name: "레버너",
+        code: 15,
         hanzul: "이 생명은 영원하되, 결코 끝낼 수 없는 저주였다는 것을.",
         role: "⚔️ 돌격형",
         hp: 24,
@@ -47,6 +49,7 @@ const characters = [
         day: "2025/12/13"
     },
     {   name: "테스크",
+        code: 14,
         hanzul: "우리는 뭐든 믿었다 힘들었기에 믿음의 깨진자는 누구보다 간절하지 그리고 강력하다",
         role: "⭐ 지원형",
         hp: 34,
@@ -71,6 +74,7 @@ const characters = [
         day: "2025/12/13"
     },
     {   name: "파아뤼체",
+        code: 13,
         hanzul: "파리채로 엄마한태 맞앗는데 파리 잡는부분으로 맞았는데 저 파리되는거 아닌가요? 몸이이상해요 저 파리되는거 같아요 으엉ㄴ런맹런앳ㅎㄷㅅ",
         role: "⚔️ 돌격형",
         hp: 25,
@@ -95,6 +99,7 @@ const characters = [
         day: "2025/12/13"
     },
     {   name: "로레온",
+        code: 12,
         hanzul: "끼ㄲ끽ㅋㅋ끽ㅋㅋㅋ끽ㅋㅋㅋ엌ㅋㅋ",
         role: "⚔️ 돌격형",
         hp: 36,
@@ -119,6 +124,7 @@ const characters = [
         day: "2025/12/13"
     },
     {   name: "와세르주",
+        code: 11,
         hanzul: "안녕하세요. 전 와세르주예요. 제가 고백을 너무 많이 받아서 고민이예요... 제가 지금까지 받아온 고백만 해도 789번 정도 받...",
         role: "⭐ 지원형",
         hp: 40,
@@ -143,6 +149,7 @@ const characters = [
         day: "2025/12/13"
     },
     {   name: "롤랜드",
+        code: 10,
         hanzul: "내게는 고통밖에 없습니다.",
         role: "⚔️ 돌격형",
         hp: 30,
@@ -167,6 +174,7 @@ const characters = [
         day: "2025/12/13"
     },
     {   name: "라그나",
+        code: 9,
         hanzul: "후후... 모두들 집중!! 이 몸이 왔노라!!",
         role: "🔥 저격형",
         hp: 28,
@@ -191,6 +199,7 @@ const characters = [
         day: "2025/12/10"
     },
     {   name: "크레머",
+        code: 8,
         hanzul: "서처 배포. 일단 이것부터 디버깅하자.",
         role: "⭐ 지원형",
         hp: 28,
@@ -215,6 +224,7 @@ const characters = [
         day: "2025/12/09"
     },
     {   name: "호위 무사",
+        code: 7,
         hanzul: "아씨의 명을 받들어, 호위하겠습니다.",
         role: "⭐ 지원형",
         hp: 46,
@@ -239,6 +249,7 @@ const characters = [
         day: "2025/12/09"
     },
     {   name: "케르디아",
+        code: 6,
         hanzul: "피할 수 없는 싸움이라면, 내가 받아내지.",
         role: "⚔️ 돌격형",
         hp: 48,
@@ -263,6 +274,7 @@ const characters = [
         day: "2025/12/08"
     },
     {   name: "레미",
+        code: 5,
         hanzul: "메인 디쉬 나갑니다~!!",
         role: "⭐ 지원형",
         hp: 24,
@@ -287,6 +299,7 @@ const characters = [
         day: "2025/12/08"
     },
     {   name: "스팅",
+        code: 4,
         hanzul: "독도 약이 되고, 상처도 다시 피어나죠.",
         role: "⭐ 지원형",
         hp: 25,
@@ -311,6 +324,7 @@ const characters = [
         day: "2025/12/08"
     },
     {   name: "개스코인",
+        code: 3,
         hanzul: "…후. 피를… 더…!",
         role: "⚔️ 돌격형",
         hp: 34,
@@ -335,6 +349,7 @@ const characters = [
         day: "2025/12/08"
     },
     {   name: "녜힁",
+        code: 2,
         hanzul: "근디 젠쇼완아… 나를 막을라믄 그 양식을 싸게싸게 뽑았어야제!",
         role: "⚔️ 돌격형",
         hp: "매우 높음",
@@ -359,6 +374,7 @@ const characters = [
         day: "2025/12/07"
     },
     {   name: "샤렌",
+        code: 1,
         hanzul: "히히! 폭발이다 폭발!!!",
         role: "⚔️ 돌격형",
         hp: 24,
