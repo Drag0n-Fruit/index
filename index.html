@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커스텀 컴퍼니: ZERO</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -16,8 +15,8 @@
         <nav class="side-menu">
             <div class="menu-logo">메뉴</div>
             <ul>
-                <li><a href="agent.html" class="menu-item">✨ 공식요원</a></li>
-                <li><a href="index.html" class="menu-item active">📋 양식</a></li>
+                <li><a href="index.html" class="menu-item active">✨ 공식 요원</a></li>
+                <li><a href="asdf.html" class="menu-item">🎨 나중에추가</a></li>
             </ul>
         </nav>
 
@@ -25,11 +24,16 @@
         <div class="content-area">
             <header>
                 <h1>커스텀 컴퍼니: ZERO</h1>
-                <h4>요원 양식 모음집</h4>
-                <h5 style="color: red; font-weight: normal; text-decoration: underline;">※ 편법 사용 시 니 여친 ㅈ가빈</h5>
+                <h4>공식 요원</h4>
             </header>
 
             <main>
+                <div class="sort-controls">
+                    <button onclick="sortCards('default')">기본</button>
+                    <button onclick="sortCards('name')">이름순</button>
+                    <button onclick="sortCards('num')">번호순</button>
+                    <button onclick="sortCards('area')">지역순</button>
+                </div>
                 <div id="character-container" class="container"></div>
             </main>
         </div>
@@ -43,9 +47,8 @@
         </div>
     </div>
 
-    <script src="samples.js"></script>
-    <script src="script.js"></script>
+    <script src="agents.js"></script>
+    <script src="agentscr.js"></script>
 </body>
-
 
 </html>
