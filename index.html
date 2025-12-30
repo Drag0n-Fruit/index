@@ -13,25 +13,25 @@
     <div class="main-wrapper">
         <!-- 왼쪽 사이드바 메뉴 -->
         <nav class="side-menu">
-            <div class="menu-logo">메뉴</div>
+            <div class="menu-logo"><img src="agents/logo.png"></div>
             <ul>
-                <li><a href="index.html" class="menu-item active">✨ 공식 요원</a></li>
-                <li><a href="asdf.html" class="menu-item">🎨 나중에추가</a></li>
+                <li><a href="index.html" class="menu-item active">✨ 공식 캐릭터</a></li>
+                <li><a href="asdf.html" class="menu-item">🎨 나중에추가할건데뭐넣지</a></li>
             </ul>
         </nav>
 
         <div class="content-area">
             <header>
                 <h1>커스텀 컴퍼니: ZERO</h1>
-                <h4>공식 요원</h4>
+                <h4>플레이어블 캐릭터</h4>
             </header>
 
             <main>
                 <div class="sort-controls">
                     <button onclick="sortCards('default')">기본</button>
-                    <button onclick="sortCards('name')">이름순</button>
+                    <button onclick="sortCards('name')">가나다순</button>
                     <button onclick="sortCards('num')">출시순</button>
-                    <button onclick="sortCards('area')">지역순</button>
+                    <!--<button onclick="sortCards('area')">지역순</button>-->
                 </div>
                 <div id="character-container" class="container"></div>
             </main>
