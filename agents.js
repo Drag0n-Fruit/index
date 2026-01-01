@@ -208,7 +208,7 @@ const characters = [
         "skill2": "사격 모듈",
         "skill2b": "(보조 무기 / <span style='color:#AF1F1A;'>탄환</span> 3 소모)",
         "skill2a": "선딜레이 후, 초장거리에서 총알을 발사하며 적을 저격한다",
-        "skill3": "도주",
+        "skill3": "전략적 후퇴",
         "skill3b": "(35s)",
         "skill3a": "전방으로 적을 <span style='color:red;'>기절</span>시키는 투사체를 투척한다. 적중 성공 시, 자신에게 <span style='color:#FFFF00;'>신속</span>을 부여한다",
         "ultimate": "일점사",
@@ -342,4 +342,5 @@ const characters = [
         "passivea": "도박을 4연속으로 성공할 시, 일시적으로 대량의 버프를 획득한다",
         
     }
+
 ]
