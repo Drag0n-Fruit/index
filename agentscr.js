@@ -13,7 +13,6 @@ const areaOrder = {
     "❓ 불명": 99
 };
 
-
 function renderCards(data) {
     container.innerHTML = '';
     data.forEach((char, index) => {
@@ -62,6 +61,37 @@ function sortCards(type) {
 
 function openModal(index) {
     const c = characters[index];
+
+    const passiveHTML = c.passive
+        ? `
+    <div class="skill-sub-tabs">
+        <p style="text-align: center; margin-top:15px;" class="skill-sub-btn">패시브</p>
+    </div>
+    <div style="margin-top:-10px;" class="skill-detail-box">
+        <strong style="font-size:1.2rem; color:#00e5ff;">${c.passive}</strong>
+        <p style="margin-top:10px; font-size:0.95rem;">${c.passivea}</p>
+    </div>
+    `
+        : '';
+
+    let filledSegments = 0;
+    if (c.hp >= 44) filledSegments = 5;      // 매우 높음 (44~50)
+    else if (c.hp >= 37) filledSegments = 4; // 높음 (37~43)
+    else if (c.hp >= 30) filledSegments = 3; // 보통 (30~36)
+    else if (c.hp >= 25) filledSegments = 2; // 낮음 (25~29)
+    else filledSegments = 1;                 // 매우 낮음 (20~24)
+
+    let hpBarHtml = '<div class="hp-bar-wrapper">';
+    for (let i = 0; i < 5; i++) {
+        const width = (i < filledSegments) ? 100 : 0;
+        hpBarHtml += `
+            <div class="hp-segment">
+                <div class="hp-inner" style="width: ${width}%"></div>
+            </div>`;
+    }
+    hpBarHtml += '</div>';
+
+
     modalContent.innerHTML = `
         <div class="agent-detail-wrapper">
             <div class="info-container">
@@ -75,10 +105,16 @@ function openModal(index) {
 
                 <div id="stat-tab" class="tab-content active">
                     <div class="info-section">
-                        <p class= "info-role">${c.role}</p>
-                        <p>❤️ 체력: ${c.hp}</p>
-                        <p>⚔️ 무기: ${c.weapon}</p>
-                        <p>🎨 제작: ${c.author}</p>
+                        <p style="color:#00e5ff; margin-bottom: 6px;">❘ <span style="color:#fff;">역할군</span>
+                        <p style="margin-left: 4px;" class= "info-role">${c.role}</p>
+                        <div style="margin-bottom: 15px;">
+                            <p style="color:#00e5ff;">❘ <span style="color:#fff;">체력: ${c.hp}</span>
+                            ${hpBarHtml}
+                        </div>
+                        <p style="color:#00e5ff; ">❘ <span style="color:#fff;">무기</span>
+                        <p style = "margin-left: 4px; margin-bottom: 0px; margin-top: 4px;" class= "info-role">${c.weapon} <br> <p style="font-size:0.9rem; color:#A5A5A5; margin-bottom: 15px;">⠀${c.weapon1}</span>
+                        <p style="color:#00e5ff;">❘ <span style="color:#fff;">제작자<br><p style="font-size:0.825rem; color:#A5A5A5; margin-left: 4px; margin-bottom: 6px;">${c.author}</span>
+                        <p style = "color:#D8D8D8; margin-top: 20px; margin-left: 4px;"><strong>${c.introduce}</strong></span>
                     </div>
                 </div>
 
@@ -90,18 +126,20 @@ function openModal(index) {
                         <button class="skill-sub-btn" onclick="switchSkill(event, 'ult')">궁극기</button>
                     </div>
                     
-                    <div id="skill-display" class="skill-detail-box">
+                    <div style="margin-top:-10px;" id="skill-display" class="skill-detail-box">
                         <strong style="font-size:1.2rem; color:#00e5ff;">${c.skill1}</strong> <span>${c.skill1b}</span>
-                        <p style="margin-top:10px;">${c.skill1a}</p>
+                        <p style="margin-top:10px; font-size:0.95rem; color:#B5BFCC;">${c.skill1a}</p>
                     </div>
+                    
+                    ${passiveHTML}
                 </div>
 
                 <div id="story-tab" class="tab-content">
                     <div class="info-section">
                         <img src="${c.img3}" width="80" height="80" style="margin-bottom: 10px;" onerror="this.src='agents/missing-2.png'">
                         <br><p class="info-role">${c.area}</p>
-                        <p class="story-title">"${c.hanzul}"</p>
-                        <p class="story-text" style="line-height:1.8;">${c.story}</p>
+                        <p class="story-title" style = "margin-top: 10px; border-left: 2px solid #00e5ff;">⠀"${c.hanzul}"</p>
+                        <p class="story-text" style="line-height:1.3; margin-top: 15px; margin-left: 10px; font-size:0.95rem; color:#A5A5A5;">${c.story}</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +149,6 @@ function openModal(index) {
         </div>
     `;
 
-    // 탭 전환을 위해 캐릭터 데이터를 전역 혹은 함수 연결용으로 임시 저장
     window.currentSelectedChar = c;
 
     modal.style.display = 'flex';
@@ -143,13 +180,13 @@ function switchSkill(event, skillType) {
 
     let html = '';
     if (skillType === 's1') {
-        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.skill1}</strong> <span>${c.skill1b}</span><p style="margin-top:10px;">${c.skill1a}</p>`;
+        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.skill1}</strong> <span>${c.skill1b}</span><p style="margin-top:10px; font-size:0.95rem; color:#B5BFCC;">${c.skill1a}</p>`;
     } else if (skillType === 's2') {
-        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.skill2}</strong> <span>${c.skill2b}</span><p style="margin-top:10px;">${c.skill2a}</p>`;
+        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.skill2}</strong> <span>${c.skill2b}</span><p style="margin-top:10px; font-size:0.95rem; color:#B5BFCC;">${c.skill2a}</p>`;
     } else if (skillType === 's3') {
-        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.skill3}</strong> <span>${c.skill3b}</span><p style="margin-top:10px;">${c.skill3a}</p>`;
+        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.skill3}</strong> <span>${c.skill3b}</span><p style="margin-top:10px; font-size:0.95rem; color:#B5BFCC;">${c.skill3a}</p>`;
     } else if (skillType === 'ult') {
-        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.ultimate}</strong> <span class="ult-tag">${c.ultimateb}</span><p style="margin-top:10px;">${c.ultimatea}</p>`;
+        html = `<strong style="font-size:1.2rem; color:#00e5ff;">${c.ultimate}</strong> <span>${c.ultimateb}</span><p style="margin-top:10px; font-size:0.95rem; color:#B5BFCC;">${c.ultimatea}</p>`;
     }
 
     display.innerHTML = html;

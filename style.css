@@ -588,3 +588,38 @@ header {
         transform: translateY(0);
     }
 }
+
+/* hp */
+.hp-bar-wrapper {
+    display: flex;
+    gap: 1px;
+    width: 100%;
+    max-width: 250px;
+    height: 14px;
+    margin: 5px 0;
+}
+
+.hp-segment {
+    flex: 1;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+
+    clip-path: polygon(
+        8% 0,
+        100% 0,
+        92% 100%,
+        0 100%
+    );
+}
+
+
+.hp-inner {
+    height: 100%;
+    background: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    transition: width 0.4s ease;
+
+    clip-path: inherit;
+}
